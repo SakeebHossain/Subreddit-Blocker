@@ -1,0 +1,15 @@
+{
+    "manifest_version" : 2,
+	"name" : "Subreddit Blocker",
+	"description" : "A simple, time-saving extension that blocks subreddits you need to start avoiding.",
+	"version" : "0.1",
+	
+	"icons": {"48": "subreddit_blocker_48x48.png",
+          "128": "subreddit_blocker_128x128.png" },
+	
+	"content_scripts" : [{
+		"matches" : ["https://www.reddit.com/*"],
+		"exclude_matches" : ["https://www.reddit.com/r/getdisciplined/*", "https://www.reddit.com/r/cscareerquestions/*"],
+		"js" : ["content.js"]
+	}]
+}
