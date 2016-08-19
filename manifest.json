@@ -6,6 +6,7 @@
 	
 	"icons": {"48": "subreddit_blocker_48x48.png",
           "128": "subreddit_blocker_128x128.png" },
+	"permissions" : ["storage"], //https://developer.chrome.com/extensions/storage
 	
 	"content_scripts" : [{
 		"matches" : ["https://www.reddit.com/*"],

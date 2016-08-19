@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
 	    <style>
 			<!--CSS goes here-->
 			
 		</style>
+		<script>
+		    function getUserInput() {
+                var userInput = document.getElementById('userInput').value;
+				if (userInput !== "") {
+					document.getElementById('exceptionsList').innerHTML += userInput + "\n";
+					document.getElementById('userInput').value = "";
+			    }
+			}
+		</script>
 	</head>
 	<body>
 	    <h3>Subreddit Blocker<h3>
 		<img src="subreddit_blocker_48x48.png">
+		
+		
 	
-		<input type="search"> <!--User inputs any exceptions-->
-		<textarea></textarea> <!--displays what subreddits are currently exceptions-->		
+		<input type="text" id="userInput" placeholder="Subreddit names"> <!--User inputs any exceptions-->
+		<button onClick="getUserInput()">Submit</button>
+		
+		<textarea id="exceptionsList"></textarea> <!--displays what subreddits are currently exceptions-->		
 	</body>
+	
+<!--
+i.e. askreddit;worldnews;videos
+-->
 </html>
