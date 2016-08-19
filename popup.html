@@ -11,7 +11,8 @@
 		    function getUserInput() {
                 var userInput = document.getElementById('userInput').value;
 				if (userInput !== "") {
-					document.getElementById('exceptionsList').innerHTML += userInput + "\n";
+				    chrome.storage.sync.get();
+					chrome.storage.sync.set({'userInput' + "\n";
 					document.getElementById('userInput').value = "";
 			    }
 			}
@@ -19,14 +20,13 @@
 	</head>
 	<body>
 	    <h3>Subreddit Blocker<h3>
-		<img src="subreddit_blocker_48x48.png">
-		
-		
+		<img src="subreddit_blocker_48x48.png">		
 	
 		<input type="text" id="userInput" placeholder="Subreddit names"> <!--User inputs any exceptions-->
 		<button onClick="getUserInput()">Submit</button>
 		
-		<textarea id="exceptionsList"></textarea> <!--displays what subreddits are currently exceptions-->		
+		<textarea id="exceptionsList"></textarea> <!--displays what subreddits are currently exceptions-->
+        <div id='messageBox'></div>		
 	</body>
 	
 <!--
