@@ -7,6 +7,11 @@
 	"icons": {"48": "subreddit_blocker_48x48.png",
           "128": "subreddit_blocker_128x128.png" },
 	"permissions" : ["storage"], //https://developer.chrome.com/extensions/storage, http://stackoverflow.com/questions/14531102/saving-and-retrieving-from-chrome-storage-sync
+    
+    "browser_action": {
+       "default_icon": "subreddit_blocker_48x48.png",
+       "default_popup": "popup.html"
+    },
 	
 	"content_scripts" : [{
 		"matches" : ["https://www.reddit.com/*"],
